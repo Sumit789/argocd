@@ -26,14 +26,14 @@ spec:
         - name: paypal
           mountPath: "/secrets/ssl"
           readOnly: true                
-        # livenessProbe:
-        #   httpGet:
-        #     path: /health
-        #     port: 8080
-        # readinessProbe:
-        #   httpGet:
-        #     path: /health
-        #     port: 8080
+        livenessProbe:
+          httpGet:
+           path: /health
+           port: 8080
+        readinessProbe:
+          httpGet:
+           path: /health
+           port: 8080
       volumes:
       - name: mysql
         secret:
